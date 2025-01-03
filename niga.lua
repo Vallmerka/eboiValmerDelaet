@@ -658,9 +658,9 @@ do
             Description = "Выполнение полезного скрипта.",
             Callback = function()
             loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-        })
-  
-
+        
+     end
+    })
     else
         ShowWarning = true
     end
