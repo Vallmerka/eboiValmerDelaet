@@ -279,15 +279,15 @@ end)
 --! UI Initializer
 
 do
-    local Window = Fluent:CreateWindow({
-        Title = string.format("%s <b><i>%s</i></b>", string.format(MonthlyLabels[os.date("*t").month], " Valmer Delaet ♥ "),
+    local Window = Fluent:CreateWindow(
+        Title = "Valmer Delaet ♥ ",
         SubTitle = "By @ttwiz_z",
         TabWidth = UISettings.TabWidth,
         Size = UDim2.fromOffset(table.unpack(UISettings.Size)),
         Theme = UISettings.Theme,
         Acrylic = UISettings.Acrylic,
         MinimizeKey = UISettings.MinimizeKey
-    })
+)
 
     local Tabs = { Aimbot = Window:AddTab({ Title = "Aimbot", Icon = "crosshair" }) }
 
@@ -2441,7 +2441,8 @@ local AimbotLoop; AimbotLoop = RunService[UISettings.RenderingMode]:Connect(func
                 end
             else
                 FieldsHandler:ResetAimbotFields(true)
-            end
-        end
+             end
+         end
+       end
     end
 end)
