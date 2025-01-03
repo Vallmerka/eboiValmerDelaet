@@ -431,7 +431,7 @@ do
             Configuration.AimPartDropdownValues = {}
             AimPartDropdown:SetValues(Configuration.AimPartDropdownValues)
             Window:Dialog({
-                Title = :3,
+                Title = ":3",
                 Content = Items == 0 and "Nothing has been cleared!" or Items == 1 and "1 Item has been cleared!" or string.format("%s Items have been cleared!", Items),
                 Buttons = {
                     {
@@ -539,7 +539,7 @@ do
     Tabs.Bots = Window:AddTab({ Title = "Bots", Icon = "bot" })
 
     Tabs.Bots:AddParagraph({
-        Title = string.format(:З),
+        Title = ":З",
         Content = ""
     })
 
@@ -640,7 +640,7 @@ do
             Configuration.SpinPartDropdownValues = {}
             SpinPartDropdown:SetValues(Configuration.SpinPartDropdownValues)
             Window:Dialog({
-                Title = :З,
+                Title = ":З",
                 Content = Items == 0 and "Nothing has been cleared!" or Items == 1 and "1 Item has been cleared!" or string.format("%s Items have been cleared!", Items),
                 Buttons = {
                     {
@@ -697,7 +697,7 @@ do
     Tabs.Checks = Window:AddTab({ Title = "Checks", Icon = "list-checks" })
 
     Tabs.Checks:AddParagraph({
-        Title = string.format(:З),
+        Title = ":З",
         Content = ""
     })
 
@@ -897,7 +897,7 @@ do
             local Items = #Configuration.IgnoredPlayers
             IgnoredPlayersDropdown:SetValue({})
             Window:Dialog({
-                Title = :З,
+                Title = ":З",
                 Content = Items == 0 and "Nothing has been deselected!" or Items == 1 and "1 Item has been deselected!" or string.format("%s Items have been deselected!", Items),
                 Buttons = {
                     {
@@ -924,7 +924,7 @@ do
             Configuration.IgnoredPlayersDropdownValues = Cache
             IgnoredPlayersDropdown:SetValues(Configuration.IgnoredPlayersDropdownValues)
             Window:Dialog({
-                Title = :З,
+                Title = ":З",
                 Content = Items == 0 and "Nothing has been cleared!" or Items == 1 and "1 Item has been cleared!" or string.format("%s Items have been cleared!", Items),
                 Buttons = {
                     {
@@ -1000,7 +1000,7 @@ do
             local Items = #Configuration.TargetPlayers
             TargetPlayersDropdown:SetValue({})
             Window:Dialog({
-                Title = :З,
+                Title = ":З",
                 Content = Items == 0 and "Nothing has been deselected!" or Items == 1 and "1 Item has been deselected!" or string.format("%s Items have been deselected!", Items),
                 Buttons = {
                     {
@@ -1027,7 +1027,7 @@ do
             Configuration.TargetPlayersDropdownValues = Cache
             TargetPlayersDropdown:SetValues(Configuration.TargetPlayersDropdownValues)
             Window:Dialog({
-                Title = :З,
+                Title = ":З",
                 Content = Items == 0 and "Nothing has been cleared!" or Items == 1 and "1 Item has been cleared!" or string.format("%s Items have been cleared!", Items),
                 Buttons = {
                     {
@@ -1049,7 +1049,7 @@ do
         Tabs.Visuals = Window:AddTab({ Title = "Visuals", Icon = "box" })
 
         Tabs.Visuals:AddParagraph({
-            Title = :З,
+            Title = ":З",
             Content = ""
         })
 
@@ -1291,7 +1291,7 @@ do
     Tabs.Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 
     Tabs.Settings:AddParagraph({
-        Title = :З,
+        Title = ":З",
         Content = ""
     })
 
@@ -1396,8 +1396,8 @@ do
             UISettings.RenderingMode = Value
             InterfaceManager:ExportSettings()
             Window:Dialog({
-                Title = :З,
-                Content = "Рестартнись пж для лучшего еффекта",
+                Title = ":З",
+                Content = "Рестартнись пж для лучшего эффекта",
                 Buttons = {
                     {
                         Title = "Confirm"
