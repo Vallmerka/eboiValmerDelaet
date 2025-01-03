@@ -550,7 +550,7 @@ do
         Content = "крутилка плохо работает в RenderStepped рендер моде"
     })
 
-    local SpinBotToggle = SpinBotSection:AddToggle("SpinBot", { Title = "крутилка", Description = "Toggles the SpinBot", Default = Configuration.SpinBot })
+    local SpinBotToggle = SpinBotSection:AddToggle("SpinBot", { Title = "крутилка", Description = ":р", Default = Configuration.SpinBot })
     SpinBotToggle:OnChanged(function(Value)
         Configuration.SpinBot = Value
         if not IsComputer then
@@ -559,7 +559,7 @@ do
     end)
 
     if IsComputer then
-        local OnePressSpinningModeToggle = SpinBotSection:AddToggle("OnePressSpinningMode", { Title = "One-Press Mode", Description = "Uses the One-Press Mode instead of the Holding Mode", Default = Configuration.OnePressSpinningMode })
+        local OnePressSpinningModeToggle = SpinBotSection:AddToggle("OnePressSpinningMode", { Title = "Переключатель кнопки", Description = "Вам не прийдется удерживать бинд", Default = Configuration.OnePressSpinningMode })
         OnePressSpinningModeToggle:OnChanged(function(Value)
             Configuration.OnePressSpinningMode = Value
         end)
