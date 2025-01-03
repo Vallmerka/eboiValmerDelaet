@@ -546,11 +546,11 @@ do
     local SpinBotSection = Tabs.Bots:AddSection("SpinBot")
 
     SpinBotSection:AddParagraph({
-        Title = "NOTE",
-        Content = "SpinBot does not function normally in RenderStepped Rendering Mode. Set a different Rendering Mode value than RenderStepped to solve this problem."
+        Title = "Внимание!",
+        Content = "крутилка плохо работает в RenderStepped рендер моде"
     })
 
-    local SpinBotToggle = SpinBotSection:AddToggle("SpinBot", { Title = "SpinBot", Description = "Toggles the SpinBot", Default = Configuration.SpinBot })
+    local SpinBotToggle = SpinBotSection:AddToggle("SpinBot", { Title = "крутилка", Description = "Toggles the SpinBot", Default = Configuration.SpinBot })
     SpinBotToggle:OnChanged(function(Value)
         Configuration.SpinBot = Value
         if not IsComputer then
@@ -565,8 +565,8 @@ do
         end)
 
         local SpinKeybind = SpinBotSection:AddKeybind("SpinKey", {
-            Title = "Spin Key",
-            Description = "Changes the Spin Key",
+            Title = "крутилка бинд",
+            Description = "Изменить бинд на крутилку",
             Default = Configuration.SpinKey,
             ChangedCallback = function(Value)
                 Configuration.SpinKey = Value
@@ -576,8 +576,8 @@ do
     end
 
     SpinBotSection:AddSlider("SpinBotVelocity", {
-        Title = "SpinBot Velocity",
-        Description = "Changes the SpinBot Velocity",
+        Title = "Крутилкаа велосити",
+        Description = "крутилка велосити изменялка",
         Default = Configuration.SpinBotVelocity,
         Min = 1,
         Max = 50,
@@ -588,8 +588,8 @@ do
     })
 
     local SpinPartDropdown = SpinBotSection:AddDropdown("SpinPart", {
-        Title = "Spin Part",
-        Description = "Changes the Spin Part",
+        Title = "Спин часть тела",
+        Description = "Смена части тела для крутилки",
         Values = Configuration.SpinPartDropdownValues,
         Default = Configuration.SpinPart,
         Callback = function(Value)
@@ -597,16 +597,16 @@ do
         end
     })
 
-    local RandomSpinPartToggle = SpinBotSection:AddToggle("RandomSpinPart", { Title = "Random Spin Part", Description = "Selects every second a Random Spin Part from Dropdown", Default = Configuration.RandomSpinPart })
+    local RandomSpinPartToggle = SpinBotSection:AddToggle("RandomSpinPart", { Title = "Рандом выбор части крутилки", Description = "Случайно выберает какую то часть крутилки", Default = Configuration.RandomSpinPart })
     RandomSpinPartToggle:OnChanged(function(Value)
         Configuration.RandomSpinPart = Value
     end)
 
     SpinBotSection:AddInput("AddSpinPart", {
-        Title = "Add Spin Part",
-        Description = "After typing, press Enter",
+        Title = "Добавить спин часть",
+        Description = "напиши, потом энтер",
         Finished = true,
-        Placeholder = "Part Name",
+        Placeholder = "часть",
         Callback = function(Value)
             if #Value > 0 and not table.find(Configuration.SpinPartDropdownValues, Value) then
                 table.insert(Configuration.SpinPartDropdownValues, Value)
@@ -616,10 +616,10 @@ do
     })
 
     SpinBotSection:AddInput("RemoveSpinPart", {
-        Title = "Remove Spin Part",
-        Description = "After typing, press Enter",
+        Title = "Убрать спин часть",
+        Description = "напиши, потом энтер",
         Finished = true,
-        Placeholder = "Part Name",
+        Placeholder = "часть",
         Callback = function(Value)
             if #Value > 0 and table.find(Configuration.SpinPartDropdownValues, Value) then
                 if Configuration.SpinPart == Value then
@@ -632,8 +632,8 @@ do
     })
 
     SpinBotSection:AddButton({
-        Title = "Clear All Items",
-        Description = "Removes All Elements",
+        Title = "Очистить все вещи",
+        Description = "",
         Callback = function()
             local Items = #Configuration.SpinPartDropdownValues
             SpinPartDropdown:SetValue(nil)
@@ -641,7 +641,7 @@ do
             SpinPartDropdown:SetValues(Configuration.SpinPartDropdownValues)
             Window:Dialog({
                 Title = ":З",
-                Content = Items == 0 and "Nothing has been cleared!" or Items == 1 and "1 Item has been cleared!" or string.format("%s Items have been cleared!", Items),
+                Content = Items == 0 and "Не чего очишать!" or Items == 1 and "1 предмет был удален!" or string.format("%s предмета было удалено!", Items),
                 Buttons = {
                     {
                         Title = "Confirm"
@@ -652,9 +652,10 @@ do
     })
 
     if getfenv().mouse1click and IsComputer then
+
         local plohoe = Tabs.Bots:AddSection("Полезное")
-        
-        Tabs.Main:AddButton({
+
+        plohoe:AddButton({
             Title = "Infinite Yield",
             Description = "Выполнение полезного скрипта.",
             Callback = function()
@@ -662,9 +663,6 @@ do
         
      end
     })
-    else
-        ShowWarning = true
-    end
 
     Tabs.Checks = Window:AddTab({ Title = "Checks", Icon = "list-checks" })
 
@@ -2415,3 +2413,4 @@ local AimbotLoop; AimbotLoop = RunService[UISettings.RenderingMode]:Connect(func
          end
        end
     end)
+end
