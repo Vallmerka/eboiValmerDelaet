@@ -281,7 +281,7 @@ end)
 do
     local Window = Fluent:CreateWindow(
         Title = "Valmer Delaet ♥ ",
-        SubTitle = "By @ttwiz_z",
+        SubTitle = "By valmer",
         TabWidth = UISettings.TabWidth,
         Size = UDim2.fromOffset(table.unpack(UISettings.Size)),
         Theme = UISettings.Theme,
