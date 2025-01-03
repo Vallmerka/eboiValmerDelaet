@@ -287,7 +287,7 @@ do
         MinimizeKey = UISettings.MinimizeKey
 })
 
-    local Tabs = { Aimbot = Window:AddTab({ Title = "Aimbot", Icon = "crosshair" }) }
+    local Tabs = { Aimbot = Window:AddTab({ Title = "комбат", Icon = "crosshair" }) }
 
     Window:SelectTab(1)
 
@@ -536,14 +536,14 @@ do
         end
     })
 
-    Tabs.Bots = Window:AddTab({ Title = "Bots", Icon = "bot" })
+    Tabs.Bots = Window:AddTab({ Title = "фиговина", Icon = "bot" })
 
     Tabs.Bots:AddParagraph({
         Title = ":З",
         Content = ""
     })
 
-    local SpinBotSection = Tabs.Bots:AddSection("SpinBot")
+    local SpinBotSection = Tabs.Bots:AddSection("Крутилка")
 
     SpinBotSection:AddParagraph({
         Title = "Внимание!",
@@ -664,7 +664,7 @@ do
      end
     })
 
-    Tabs.Checks = Window:AddTab({ Title = "Checks", Icon = "list-checks" })
+    Tabs.Checks = Window:AddTab({ Title = "чиназес", Icon = "list-checks" })
 
     Tabs.Checks:AddParagraph({
         Title = ":З",
@@ -1016,7 +1016,7 @@ do
     end)
 
     if DEBUG or getfenv().Drawing and getfenv().Drawing.new then
-        Tabs.Visuals = Window:AddTab({ Title = "Visuals", Icon = "box" })
+        Tabs.Visuals = Window:AddTab({ Title = "визуальчики", Icon = "box" })
 
         Tabs.Visuals:AddParagraph({
             Title = ":З",
@@ -1258,7 +1258,7 @@ do
         ShowWarning = true
     end
 
-    Tabs.Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+    Tabs.Settings = Window:AddTab({ Title = "Настройки", Icon = "settings" })
 
     Tabs.Settings:AddParagraph({
         Title = ":З",
