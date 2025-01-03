@@ -1657,11 +1657,11 @@ end
 local function Notify(Message)
     if Fluent and typeof(Message) == "string" then
         Fluent:Notify({
-            Title = valmer delaet ♥,
+            Title = "valmer delaet ♥",
             Content = Message,
             SubContent = "By valmer",
             Duration = 1.5
-        })
+            })
     end
 end
 
