@@ -279,7 +279,7 @@ end)
 --! UI Initializer
 
 do
-    local Window = Fluent:CreateWindow(
+    local Window = Fluent:CreateWindow({
         Title = "Valmer Delaet ♥ ",
         SubTitle = "By valmer",
         TabWidth = UISettings.TabWidth,
@@ -287,7 +287,7 @@ do
         Theme = UISettings.Theme,
         Acrylic = UISettings.Acrylic,
         MinimizeKey = UISettings.MinimizeKey
-)
+})
 
     local Tabs = { Aimbot = Window:AddTab({ Title = "Aimbot", Icon = "crosshair" }) }
 
