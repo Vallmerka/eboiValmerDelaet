@@ -1052,7 +1052,7 @@ do
 
         Tabs.Visuals:AddParagraph({
             Title = :З,
-            Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/valmer/Open-Aimbot"
+            Content = ""
         })
 
         local FoVSection = Tabs.Visuals:AddSection("FoV")
@@ -1293,8 +1293,8 @@ do
     Tabs.Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 
     Tabs.Settings:AddParagraph({
-        Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
-        Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/valmer/Open-Aimbot"
+        Title = :З,
+        Content = ""
     })
 
     local UISection = Tabs.Settings:AddSection("UI")
@@ -1398,8 +1398,8 @@ do
             UISettings.RenderingMode = Value
             InterfaceManager:ExportSettings()
             Window:Dialog({
-                Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
-                Content = "Changes will take effect after the Restart!",
+                Title = :З,
+                Content = "Рестартнись пж для лучшего еффекта",
                 Buttons = {
                     {
                         Title = "Confirm"
@@ -1584,12 +1584,12 @@ do
     if getfenv().setclipboard then
         DiscordWikiSection:AddButton({
             Title = "Copy Invite Link",
-            Description = "Paste it into the Browser Tab",
+            Description = "скопируй и вставь в свой браузер",
             Callback = function()
-                getfenv().setclipboard("https://twix.cyou/pix")
+                getfenv().setclipboard("")
                 Window:Dialog({
-                    Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
-                    Content = "Invite Link has been copied to the Clipboard!",
+                    Title = ":с",
+                    Content = "Дискордик, пока нету",
                     Buttons = {
                         {
                             Title = "Confirm"
@@ -1600,13 +1600,13 @@ do
         })
 
         DiscordWikiSection:AddButton({
-            Title = "Copy Wiki Link",
-            Description = "Paste it into the Browser Tab",
+            Title = "пусто",
+            Description = "скопируй и вставь в свой браузер",
             Callback = function()
-                getfenv().setclipboard("https://moderka.org/Open-Aimbot")
+                getfenv().setclipboard("")
                 Window:Dialog({
-                    Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
-                    Content = "Wiki Link has been copied to the Clipboard!",
+                    Title = ":с",
+                    Content = "Ссылка скопирована",
                     Buttons = {
                         {
                             Title = "Confirm"
@@ -1617,13 +1617,13 @@ do
         })
     else
         DiscordWikiSection:AddParagraph({
-            Title = "https://twix.cyou/pix",
-            Content = "Paste it into the Browser Tab"
+            Title = "",
+            Content = "Вставь в браузер"
         })
 
         DiscordWikiSection:AddParagraph({
-            Title = "https://moderka.org/Open-Aimbot",
-            Content = "Paste it into the Browser Tab"
+            Title = "",
+            Content = "Вставь в браузер"
         })
     end
 
@@ -1641,7 +1641,7 @@ do
         elseif ShowWarning then
             Window:Dialog({
                 Title = "Warning",
-                Content = string.format("Your Software does not support all the Features of %s 🔥FREE🔥!", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
+                Content = "Твой читик не тянет скрипт :c",
                 Buttons = {
                     {
                         Title = "Confirm"
@@ -1649,15 +1649,6 @@ do
                 }
             })
         else
-            Window:Dialog({
-                Title = string.format("%s 💫PREMIUM💫", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
-                Content = "✨Upgrade to unlock all Options✨ – Contact @ttwiz_z via Discord to buy",
-                Buttons = {
-                    {
-                        Title = "Confirm"
-                    }
-                }
-            })
         end
     end
 end
@@ -1668,15 +1659,14 @@ end
 local function Notify(Message)
     if Fluent and typeof(Message) == "string" then
         Fluent:Notify({
-            Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
+            Title = valmer delaet ♥,
             Content = Message,
-            SubContent = "By @ttwiz_z",
+            SubContent = "By valmer",
             Duration = 1.5
         })
     end
 end
 
-Notify("✨Upgrade to unlock all Options✨")
 
 
 --! Fields Handler
