@@ -652,44 +652,15 @@ do
     })
 
     if getfenv().mouse1click and IsComputer then
-        local TriggerBotSection = Tabs.Bots:AddSection("TriggerBot")
+        local plohoe = Tabs.Bots:AddSection("Полезное")
+        Tabs.Main:AddButton({
+            Title = "Infinite Yield",
+            Description = "Выполнение полезного скрипта.",
+            Callback = function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+                        })
+                    end  
 
-        local TriggerBotToggle = TriggerBotSection:AddToggle("TriggerBot", { Title = "TriggerBot", Description = "Toggles the TriggerBot", Default = Configuration.TriggerBot })
-        TriggerBotToggle:OnChanged(function(Value)
-            Configuration.TriggerBot = Value
-        end)
-
-        local OnePressTriggeringModeToggle = TriggerBotSection:AddToggle("OnePressTriggeringMode", { Title = "One-Press Mode", Description = "Uses the One-Press Mode instead of the Holding Mode", Default = Configuration.OnePressTriggeringMode })
-        OnePressTriggeringModeToggle:OnChanged(function(Value)
-            Configuration.OnePressTriggeringMode = Value
-        end)
-
-        local SmartTriggerBotToggle = TriggerBotSection:AddToggle("SmartTriggerBot", { Title = "Smart TriggerBot", Description = "Uses the TriggerBot only when Aiming", Default = Configuration.SmartTriggerBot })
-        SmartTriggerBotToggle:OnChanged(function(Value)
-            Configuration.SmartTriggerBot = Value
-        end)
-
-        local TriggerKeybind = TriggerBotSection:AddKeybind("TriggerKey", {
-            Title = "Trigger Key",
-            Description = "Changes the Trigger Key",
-            Default = Configuration.TriggerKey,
-            ChangedCallback = function(Value)
-                Configuration.TriggerKey = Value
-            end
-        })
-        Configuration.TriggerKey = TriggerKeybind.Value ~= "RMB" and Enum.KeyCode[TriggerKeybind.Value] or Enum.UserInputType.MouseButton2
-
-        TriggerBotSection:AddSlider("TriggerBotChance", {
-            Title = "TriggerBot Chance",
-            Description = "Changes the Hit Chance for TriggerBot",
-            Default = Configuration.TriggerBotChance,
-            Min = 1,
-            Max = 100,
-            Rounding = 1,
-            Callback = function(Value)
-                Configuration.TriggerBotChance = Value
-            end
-        })
     else
         ShowWarning = true
     end
@@ -1700,18 +1671,18 @@ do
                 if Configuration.Aimbot and (Input.KeyCode == Configuration.AimKey or Input.UserInputType == Configuration.AimKey) then
                     if Aiming then
                         FieldsHandler:ResetAimbotFields()
-                        Notify("[Aiming Mode]: OFF")
+                        Notify("[Аим]: выкл")
                     else
                         Aiming = true
-                        Notify("[Aiming Mode]: ON")
+                        Notify("[Аим]: вкл")
                     end
                 elseif Configuration.SpinBot and (Input.KeyCode == Configuration.SpinKey or Input.UserInputType == Configuration.SpinKey) then
                     if Spinning then
                         Spinning = false
-                        Notify("[Spinning Mode]: OFF")
+                        Notify("[крутилка]: выкл")
                     else
                         Spinning = true
-                        Notify("[Spinning Mode]: ON")
+                        Notify("[крутилка]: вкл")
                     end
                 elseif not DEBUG and getfenv().mouse1click and Configuration.TriggerBot and (Input.KeyCode == Configuration.TriggerKey or Input.UserInputType == Configuration.TriggerKey) then
                     if Triggering then
@@ -1732,10 +1703,10 @@ do
                 elseif not DEBUG and getfenv().Drawing and getfenv().Drawing.new and (Configuration.ESPBox or Configuration.NameESP or Configuration.HealthESP or Configuration.MagnitudeESP or Configuration.TracerESP) and (Input.KeyCode == Configuration.ESPKey or Input.UserInputType == Configuration.ESPKey) then
                     if ShowingESP then
                         ShowingESP = false
-                        Notify("[ESP Show]: OFF")
+                        Notify("[ESP]: выкл")
                     else
                         ShowingESP = true
-                        Notify("[ESP Show]: ON")
+                        Notify("[ESP]: вкл")
                     end
                 end
             end
@@ -1747,10 +1718,10 @@ do
             elseif not UserInputService:GetFocusedTextBox() then
                 if Aiming and not Configuration.OnePressAimingMode and (Input.KeyCode == Configuration.AimKey or Input.UserInputType == Configuration.AimKey) then
                     FieldsHandler:ResetAimbotFields()
-                    Notify("[Aiming Mode]: OFF")
+                    Notify("[Аим]: выкл")
                 elseif Spinning and not Configuration.OnePressSpinningMode and (Input.KeyCode == Configuration.SpinKey or Input.UserInputType == Configuration.SpinKey) then
                     Spinning = false
-                    Notify("[Spinning Mode]: OFF")
+                    Notify("[крутилка]: выкл")
                 elseif Triggering and not Configuration.OnePressTriggeringMode and (Input.KeyCode == Configuration.TriggerKey or Input.UserInputType == Configuration.TriggerKey) then
                     Triggering = false
                     Notify("[Triggering Mode]: OFF")
