@@ -1,5 +1,4 @@
---! Debugger
-
+begin
 local DEBUG = false
 
 if DEBUG then
