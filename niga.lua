@@ -1639,10 +1639,10 @@ do
         elseif ShowWarning then
             Window:Dialog({
                 Title = "Warning",
-                Content = "Твой читик не тянет скрипт :c",
+                Content = "Салам братан",
                 Buttons = {
                     {
-                        Title = "Confirm"
+                        Title = "уберись залупа"
                     }
                 }
             })
