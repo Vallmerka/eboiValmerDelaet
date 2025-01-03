@@ -294,7 +294,7 @@ do
     Tabs.Aimbot:AddParagraph({
         Title = ":З",
         Content = ""
-    })
+})
 
     local AimbotSection = Tabs.Aimbot:AddSection("Aimbot")
 
