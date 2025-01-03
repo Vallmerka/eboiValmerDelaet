@@ -653,6 +653,7 @@ do
 
     if getfenv().mouse1click and IsComputer then
         local plohoe = Tabs.Bots:AddSection("Полезное")
+        
         Tabs.Main:AddButton({
             Title = "Infinite Yield",
             Description = "Выполнение полезного скрипта.",
