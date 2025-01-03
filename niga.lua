@@ -280,7 +280,7 @@ end)
 
 do
     local Window = Fluent:CreateWindow({
-        Title = string.format("%s <b><i>%s</i></b>", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"), #Status > 0 and Status or "🔥FREE🔥"),
+        Title = string.format("%s <b><i>%s</i></b>", string.format(MonthlyLabels[os.date("*t").month], " Valmer Delaet ♥ "),
         SubTitle = "By @ttwiz_z",
         TabWidth = UISettings.TabWidth,
         Size = UDim2.fromOffset(table.unpack(UISettings.Size)),
@@ -294,13 +294,13 @@ do
     Window:SelectTab(1)
 
     Tabs.Aimbot:AddParagraph({
-        Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
-        Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/valmer/Open-Aimbot"
+        Title = string.format(:З),
+        Content = ""
     })
 
     local AimbotSection = Tabs.Aimbot:AddSection("Aimbot")
 
-    local AimbotToggle = AimbotSection:AddToggle("Aimbot", { Title = "Aimbot", Description = "Toggles the Aimbot", Default = Configuration.Aimbot })
+    local AimbotToggle = AimbotSection:AddToggle("Aimbot", { Title = "Аим 😱🤯", Description = "", Default = Configuration.Aimbot })
     AimbotToggle:OnChanged(function(Value)
         Configuration.Aimbot = Value
         if not IsComputer then
@@ -309,25 +309,25 @@ do
     end)
 
     if IsComputer then
-        local OnePressAimingModeToggle = AimbotSection:AddToggle("OnePressAimingMode", { Title = "One-Press Mode", Description = "Uses the One-Press Mode instead of the Holding Mode", Default = Configuration.OnePressAimingMode })
+        local OnePressAimingModeToggle = AimbotSection:AddToggle("OnePressAimingMode", { Title = "Отключение режима удерживания", Description = "Вот он выключен кнопочку аима надо зажимать, а когда включен удерживать не надо", Default = Configuration.OnePressAimingMode })
         OnePressAimingModeToggle:OnChanged(function(Value)
             Configuration.OnePressAimingMode = Value
         end)
 
         local AimKeybind = AimbotSection:AddKeybind("AimKey", {
-            Title = "Aim Key",
-            Description = "Changes the Aim Key",
+            Title = "Аим бинд",
+            Description = "Бинд для аима(Сделать его переключателем - вам выше!)",
             Default = Configuration.AimKey,
             ChangedCallback = function(Value)
                 Configuration.AimKey = Value
             end
         })
-        Configuration.AimKey = AimKeybind.Value ~= "RMB" and Enum.KeyCode[AimKeybind.Value] or Enum.UserInputType.MouseButton2
+        Configuration.AimKey = AimKeybind.Value ~= "G" and Enum.KeyCode[AimKeybind.Value] or Enum.UserInputType.MouseButton2
     end
 
     local AimModeDropdown = AimbotSection:AddDropdown("AimMode", {
-        Title = "Aim Mode",
-        Description = "Changes the Aim Mode",
+        Title = "Режим наводки",
+        Description = "Режим Camera наводит камеру | Режим Mouse наводит курсор",
         Values = { "Camera" },
         Default = Configuration.AimMode,
         Callback = function(Value)
@@ -433,7 +433,7 @@ do
             Configuration.AimPartDropdownValues = {}
             AimPartDropdown:SetValues(Configuration.AimPartDropdownValues)
             Window:Dialog({
-                Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
+                Title = :3,
                 Content = Items == 0 and "Nothing has been cleared!" or Items == 1 and "1 Item has been cleared!" or string.format("%s Items have been cleared!", Items),
                 Buttons = {
                     {
@@ -541,8 +541,8 @@ do
     Tabs.Bots = Window:AddTab({ Title = "Bots", Icon = "bot" })
 
     Tabs.Bots:AddParagraph({
-        Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
-        Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/valmer/Open-Aimbot"
+        Title = string.format(:З),
+        Content = ""
     })
 
     local SpinBotSection = Tabs.Bots:AddSection("SpinBot")
@@ -642,7 +642,7 @@ do
             Configuration.SpinPartDropdownValues = {}
             SpinPartDropdown:SetValues(Configuration.SpinPartDropdownValues)
             Window:Dialog({
-                Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
+                Title = :З,
                 Content = Items == 0 and "Nothing has been cleared!" or Items == 1 and "1 Item has been cleared!" or string.format("%s Items have been cleared!", Items),
                 Buttons = {
                     {
@@ -699,8 +699,8 @@ do
     Tabs.Checks = Window:AddTab({ Title = "Checks", Icon = "list-checks" })
 
     Tabs.Checks:AddParagraph({
-        Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
-        Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/valmer/Open-Aimbot"
+        Title = string.format(:З),
+        Content = ""
     })
 
     local SimpleChecksSection = Tabs.Checks:AddSection("Simple Checks")
@@ -899,7 +899,7 @@ do
             local Items = #Configuration.IgnoredPlayers
             IgnoredPlayersDropdown:SetValue({})
             Window:Dialog({
-                Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
+                Title = :З,
                 Content = Items == 0 and "Nothing has been deselected!" or Items == 1 and "1 Item has been deselected!" or string.format("%s Items have been deselected!", Items),
                 Buttons = {
                     {
@@ -926,7 +926,7 @@ do
             Configuration.IgnoredPlayersDropdownValues = Cache
             IgnoredPlayersDropdown:SetValues(Configuration.IgnoredPlayersDropdownValues)
             Window:Dialog({
-                Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
+                Title = :З,
                 Content = Items == 0 and "Nothing has been cleared!" or Items == 1 and "1 Item has been cleared!" or string.format("%s Items have been cleared!", Items),
                 Buttons = {
                     {
@@ -1002,7 +1002,7 @@ do
             local Items = #Configuration.TargetPlayers
             TargetPlayersDropdown:SetValue({})
             Window:Dialog({
-                Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
+                Title = :З,
                 Content = Items == 0 and "Nothing has been deselected!" or Items == 1 and "1 Item has been deselected!" or string.format("%s Items have been deselected!", Items),
                 Buttons = {
                     {
@@ -1029,7 +1029,7 @@ do
             Configuration.TargetPlayersDropdownValues = Cache
             TargetPlayersDropdown:SetValues(Configuration.TargetPlayersDropdownValues)
             Window:Dialog({
-                Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
+                Title = :З,
                 Content = Items == 0 and "Nothing has been cleared!" or Items == 1 and "1 Item has been cleared!" or string.format("%s Items have been cleared!", Items),
                 Buttons = {
                     {
@@ -1047,16 +1047,11 @@ do
         Configuration.PremiumCheck = Value
     end)
 
-    PremiumChecksSection:AddParagraph({
-        Title = string.format("%s 💫PREMIUM💫", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
-        Content = "✨Upgrade to unlock all Options✨\nContact @ttwiz_z via Discord to buy"
-    })
-
     if DEBUG or getfenv().Drawing and getfenv().Drawing.new then
         Tabs.Visuals = Window:AddTab({ Title = "Visuals", Icon = "box" })
 
         Tabs.Visuals:AddParagraph({
-            Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
+            Title = :З,
             Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/valmer/Open-Aimbot"
         })
 
