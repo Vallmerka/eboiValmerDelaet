@@ -294,7 +294,7 @@ do
     Window:SelectTab(1)
 
     Tabs.Aimbot:AddParagraph({
-        Title = string.format(:З),
+        Title = ":З",
         Content = ""
     })
 
