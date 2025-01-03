@@ -320,7 +320,7 @@ do
                 Configuration.AimKey = Value
             end
         })
-        Configuration.AimKey = AimKeybind.Value ~= "G" and Enum.KeyCode[AimKeybind.Value] or Enum.UserInputType.MouseButton2
+        Configuration.AimKey = AimKeybind.Value ~= "RMB" and Enum.KeyCode[AimKeybind.Value] or Enum.UserInputType.MouseButton2
     end
 
     local AimModeDropdown = AimbotSection:AddDropdown("AimMode", {
@@ -1661,7 +1661,7 @@ local function Notify(Message)
             Content = Message,
             SubContent = "By valmer",
             Duration = 1.5
-            })
+        })
     end
 end
 
