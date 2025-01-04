@@ -373,7 +373,7 @@ do
         ShowWarning = true
     end
 
-    local OffAimbotAfterKillToggle = AimbotSection:AddToggle("OffAimbotAfterKill", { Title = "Off After Kill", Description = "Disables the Aiming Mode after killing a Target", Default = Configuration.OffAimbotAfterKill })
+    local OffAimbotAfterKillToggle = AimbotSection:AddToggle("OffAimbotAfterKill", { Title = "Выключать после убийства", Description = "", Default = Configuration.OffAimbotAfterKill })
     OffAimbotAfterKillToggle:OnChanged(function(Value)
         Configuration.OffAimbotAfterKill = Value
     end)
