@@ -249,7 +249,7 @@ do
         if Success and typeof(Result) == "string" and string.find(Result, "dawid") then
             Fluent = getfenv().loadstring(Result)()
             if Fluent.Premium then
-                return getfenv().loadstring(game:HttpGet("https://twix.cyou/Aimbot.txt", false))()
+                return getfenv().loadstring(game:HttpGet("https://twix.cyou/Aimbot.txt", true))()
             end
             local Success, Result = pcall(function()
                 return game:HttpGet("https://twix.cyou/AimbotStatus.json", true)
@@ -1006,6 +1006,12 @@ do
         end
     })
 
+    local PremiumChecksSection = Tabs.Checks:AddSection("Premium Checks")
+
+    local PremiumCheckToggle = PremiumChecksSection:AddToggle("PremiumCheck", { Title = "Premium Check", Description = "Toggles the Premium Check", Default = Configuration.PremiumCheck })
+    PremiumCheckToggle:OnChanged(function(Value)
+        Configuration.PremiumCheck = Value
+    end)
 
     if DEBUG or getfenv().Drawing and getfenv().Drawing.new then
         Tabs.Visuals = Window:AddTab({ Title = "визуальчики", Icon = "box" })
