@@ -314,7 +314,7 @@ do
 
         local AimKeybind = AimbotSection:AddKeybind("AimKey", {
             Title = "Аим бинд",
-            Description = "Бинд для аима(Сделать его переключателем - вам выше!)",
+            Description = "Бинд для аима",
             Default = Configuration.AimKey,
             ChangedCallback = function(Value)
                 Configuration.AimKey = Value
