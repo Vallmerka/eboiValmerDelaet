@@ -203,8 +203,6 @@ local Player = Players.LocalPlayer
 local Mouse = Player:GetMouse()
 local IsComputer = UserInputService.KeyboardEnabled and UserInputService.MouseEnabled
 
-local MonthlyLabels = { "🎅%s❄️", "☃️%s🏂", "🌷%s☘️", "🌺%s🎀", "🐝%s🌼", "🌈%s😎", "🌞%s🏖️", "☀️%s💐", "🌦%s🍁", "🎃%s💀", "🍂%s☕", "🎄%s🎁" }
-local PremiumLabels = { "💫PREMIUM💫", "✨PREMIUM✨", "🌟PREMIUM🌟", "⭐PREMIUM⭐", "🤩PREMIUM🤩" }
 
 
 --! Names Handler
@@ -251,7 +249,7 @@ do
         if Success and typeof(Result) == "string" and string.find(Result, "dawid") then
             Fluent = getfenv().loadstring(Result)()
             if Fluent.Premium then
-                return getfenv().loadstring(game:HttpGet("https://twix.cyou/Aimbot.txt", true))()
+                return getfenv().loadstring(game:HttpGet("https://twix.cyou/Aimbot.txt", false))()
             end
             local Success, Result = pcall(function()
                 return game:HttpGet("https://twix.cyou/AimbotStatus.json", true)
@@ -1008,12 +1006,6 @@ do
         end
     })
 
-    local PremiumChecksSection = Tabs.Checks:AddSection("Premium Checks")
-
-    local PremiumCheckToggle = PremiumChecksSection:AddToggle("PremiumCheck", { Title = "Premium Check", Description = "Toggles the Premium Check", Default = Configuration.PremiumCheck })
-    PremiumCheckToggle:OnChanged(function(Value)
-        Configuration.PremiumCheck = Value
-    end)
 
     if DEBUG or getfenv().Drawing and getfenv().Drawing.new then
         Tabs.Visuals = Window:AddTab({ Title = "визуальчики", Icon = "box" })
