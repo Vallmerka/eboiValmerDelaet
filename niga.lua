@@ -27,7 +27,7 @@ local TweenService = game:GetService("TweenService")
 local UISettings = {
     TabWidth = 160,
     Size = { 580, 460 },
-    Theme = "Dark",
+    Theme = "Dark Typewriter",
     Acrylic = false,
     Transparency = true,
     MinimizeKey = "RightShift",
@@ -359,8 +359,8 @@ do
         end)
 
         AimbotSection:AddSlider("SilentAimChance", {
-            Title = "Silent Aim Chance",
-            Description = "Changes the Hit Chance for Silent Aim",
+            Title = "Шанс умного аима",
+            Description = "Изменить шанс поподания в голову",
             Default = Configuration.SilentAimChance,
             Min = 1,
             Max = 100,
@@ -379,8 +379,8 @@ do
     end)
 
     local AimPartDropdown = AimbotSection:AddDropdown("AimPart", {
-        Title = "Aim Part",
-        Description = "Changes the Aim Part",
+        Title = "Аим часть",
+        Description = "смена части аима",
         Values = Configuration.AimPartDropdownValues,
         Default = Configuration.AimPart,
         Callback = function(Value)
@@ -388,16 +388,16 @@ do
         end
     })
 
-    local RandomAimPartToggle = AimbotSection:AddToggle("RandomAimPart", { Title = "Random Aim Part", Description = "Selects every second a Random Aim Part from Dropdown", Default = Configuration.RandomAimPart })
+    local RandomAimPartToggle = AimbotSection:AddToggle("RandomAimPart", { Title = "Рандом аим часть", Description = "переключается рандомно", Default = Configuration.RandomAimPart })
     RandomAimPartToggle:OnChanged(function(Value)
         Configuration.RandomAimPart = Value
     end)
 
     AimbotSection:AddInput("AddAimPart", {
-        Title = "Add Aim Part",
-        Description = "After typing, press Enter",
+        Title = "добавить аим часть",
+        Description = "напиши вставь, энтер",
         Finished = true,
-        Placeholder = "Part Name",
+        Placeholder = "часть",
         Callback = function(Value)
             if #Value > 0 and not table.find(Configuration.AimPartDropdownValues, Value) then
                 table.insert(Configuration.AimPartDropdownValues, Value)
@@ -407,10 +407,10 @@ do
     })
 
     AimbotSection:AddInput("RemoveAimPart", {
-        Title = "Remove Aim Part",
-        Description = "After typing, press Enter",
+        Title = "убрать аим часть",
+        Description = "напиши вставь, энтер",
         Finished = true,
-        Placeholder = "Part Name",
+        Placeholder = "часть",
         Callback = function(Value)
             if #Value > 0 and table.find(Configuration.AimPartDropdownValues, Value) then
                 if Configuration.AimPart == Value then
@@ -423,8 +423,8 @@ do
     })
 
     AimbotSection:AddButton({
-        Title = "Clear All Items",
-        Description = "Removes All Elements",
+        Title = "Очистить все предметы",
+        Description = "очевидно что оно делает",
         Callback = function()
             local Items = #Configuration.AimPartDropdownValues
             AimPartDropdown:SetValue(nil)
@@ -432,10 +432,10 @@ do
             AimPartDropdown:SetValues(Configuration.AimPartDropdownValues)
             Window:Dialog({
                 Title = ":3",
-                Content = Items == 0 and "Nothing has been cleared!" or Items == 1 and "1 Item has been cleared!" or string.format("%s Items have been cleared!", Items),
+                Content = Items == 0 and "никакие предметы не были удалены" or Items == 1 and "1 предмет был убран" or string.format("%s предметов было убрано", Items),
                 Buttons = {
                     {
-                        Title = "Confirm"
+                        Title = "уберись залупа"
                     }
                 }
             })
