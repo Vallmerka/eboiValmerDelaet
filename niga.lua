@@ -203,6 +203,8 @@ local Player = Players.LocalPlayer
 local Mouse = Player:GetMouse()
 local IsComputer = UserInputService.KeyboardEnabled and UserInputService.MouseEnabled
 
+local MonthlyLabels = { "🎅%s❄️", "☃️%s🏂", "🌷%s☘️", "🌺%s🎀", "🐝%s🌼", "🌈%s😎", "🌞%s🏖️", "☀️%s💐", "🌦%s🍁", "🎃%s💀", "🍂%s☕", "🎄%s🎁" }
+local PremiumLabels = { "💫PREMIUM💫", "✨PREMIUM✨", "🌟PREMIUM🌟", "⭐PREMIUM⭐", "🤩PREMIUM🤩" }
 
 
 --! Names Handler
