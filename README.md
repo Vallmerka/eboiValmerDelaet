@@ -1,8 +1,4 @@
-# eboiValmerDelaet
-
-Скоро будет своя Wiki. | There will be a wiki soon.
-
-<ins>works in solara</ins>
+Скрипт больше не рабочий, делается новый
 
 ```lua 
  loadstring(game:HttpGet("https://raw.githubusercontent.com/Vallmerka/eboiValmerDelaet/refs/heads/main/niga.lua", true))()
